@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Full Name Concatenation</title>
+    <style>
+        /* CSS styles */
+        
+        #fullName {
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        // Co
+        function concatenateNames() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var fullName = firstName + " " + lastName;
+            var fullNameElement = document.getElementById("fullName");
+            fullNameElement.textContent = fullName;
+            fullNameElement.style.color = getRandomColor();
+        }
+
+        function getRandomColor() {
+            var colors = ["blue", "red", "green"];
+            var randomIndex = Math.floor(Math.random() * colors.length);
+            return colors[randomIndex];
+        }
+
+        function increaseFontSize() {
+            var fullNameElement = document.getElementById("fullName");
+            var currentFontSize = parseInt(window.getComputedStyle(fullNameElement).fontSize);
+            fullNameElement.style.fontSize = (currentFontSize + 2) + "px";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Full Name Concatenation</h1>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName">
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName">
+
+    <button onclick="concatenateNames()">Submit</button>
+    <button onclick="increaseFontSize()">Save</button>
+
+    <h2>Full Name:
+        <span id="fullName"></span>
+    </h2>
+</body>
+
+</html>
